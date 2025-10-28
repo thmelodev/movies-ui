@@ -20,6 +20,7 @@
   --color-input: var(--input);
   --color-border: var(--border);
   --color-ring: var(--ring);
+  --color-card: var(--card);
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
@@ -39,6 +40,7 @@
     --secondary-active: rgba(180, 18, 249, 0.04);
     --secondary-disabled: rgba(235, 234, 248, 0.08);
     --input: #f3f3f3;
+    --card: #ffffff;
   }
 
   .dark {
@@ -62,6 +64,7 @@
     --input: rgba(26, 25, 27, 1);
     --border: rgba(60, 57, 63, 1);
     --ring: var(--primary);
+    --card: #232225;
   }
 
   button {
