@@ -7,13 +7,14 @@ const CineBackground = ({ children }: { children?: React.ReactNode }) => {
       className="
           relative 
           w-full 
-          max-w-[1366px] 
+          max-w-screen
           flex flex-col items-center justify-center 
-          h-[564px]
+          min-h-full
+          overflow-x-hidden
         "
     >
       <div
-        className="w-screen h-[860px] bg-no-repeat bg-cover opacity-40 absolute -top-[180px]"
+        className="w-screen h-[860px] bg-no-repeat bg-center md:bg-cover opacity-40 absolute -top-64 md:-top-[180px]"
         style={{
           backgroundImage: `url(${Background})`,
           clipPath: "inset(0px 0px 150px 0px)",
@@ -28,7 +29,7 @@ const CineBackground = ({ children }: { children?: React.ReactNode }) => {
         }}
       />
 
-      <div className="relative z-10 w-full overflow-hidden">
+      <div className="relative z-10 w-[1366px] overflow-x-hidden min-h-screen justify-center flex items-center">
         {children}
       </div>
     </div>

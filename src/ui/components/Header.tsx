@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import LogoDesktop2 from "../../assets/logo_desktop.svg?react";
 import LogoMobile2 from "../../assets/logo_mobile.svg?react";
 import Sun from "../../assets/sun.svg?react";
+import Moon from "../../assets/moon.svg?react";
 import { useThemeStore } from "../../stores/theme.store";
 
 const Header = () => {
@@ -17,7 +18,7 @@ const Header = () => {
 
         <div className="flex gap-2">
           <button className="btn-secondary" onClick={() => toggleTheme()}>
-            <Sun className="text-foreground" />
+            {theme === 'dark' ? <Sun className="text-foreground" /> : <Moon className="text-foreground" />}
           </button>
           <button onClick={() => {}}>
             <span>Logout</span>

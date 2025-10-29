@@ -1,3 +1,4 @@
+import Footer from "./ui/components/Footer"
 import Header from "./ui/components/Header"
 import Main from "./ui/components/Main"
 import Login from "./ui/pages/Login"
@@ -9,6 +10,7 @@ function App() {
       <Main>
         <Login />
       </Main>
+      <Footer />
     </div>
   )
 }
