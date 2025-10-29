@@ -1,23 +1,36 @@
 import Background from "../../assets/bg.png";
 
+interface CineBackgroundProps {
+  children?: React.ReactNode;
+  clipPath?: string;
+  top?: number;
+  height?: number;
+  backgroundPosition?: string;
+  backgroundSize?: string;
+}
 
-const CineBackground = ({ children }: { children?: React.ReactNode }) => {
+
+const CineBackground = ({ children, clipPath, top, height, backgroundPosition, backgroundSize }: CineBackgroundProps) => {
   return (
     <div
-      className="
+      className={`
           relative 
           w-full 
           max-w-screen
           flex flex-col items-center justify-center 
           min-h-full
           overflow-x-hidden
-        "
+      `}
     >
       <div
-        className="w-screen h-[860px] bg-no-repeat bg-center md:bg-cover opacity-40 absolute -top-64 md:-top-[180px]"
+        className={`w-screen h-[860px] bg-no-repeat bg-center md:bg-cover opacity-40 absolute -top-64 md:-top-[180px]`}
         style={{
           backgroundImage: `url(${Background})`,
-          clipPath: "inset(0px 0px 150px 0px)",
+          clipPath: clipPath ? clipPath : undefined,
+          top: top != undefined ? `${top}px` : undefined,
+          height: height ? `${height}px` : undefined,
+          backgroundPosition: backgroundPosition ? backgroundPosition : undefined,
+          backgroundSize: backgroundSize ? backgroundSize : undefined,
         }}
       />
 

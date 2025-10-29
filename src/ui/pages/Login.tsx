@@ -4,7 +4,7 @@ import TextField from "../components/TextField"
 
 const Login = () => {
   return (
-    <CineBackground>
+    <CineBackground clipPath="inset(0px 0px 150px 0px)">
       <div className="bg-card w-96 md:w-[412px] min-h-60 p-4 gap-4 flex flex-col items-start justify-start">
         <TextField
           id="username"
