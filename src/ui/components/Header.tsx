@@ -11,8 +11,8 @@ const Header = () => {
   useEffect(() => { }, [theme])
 
   return (
-    <header className="w-screen bg-background/50 border-b border-[#F1E6FD30]/19 backdrop-blur-xs flex justify-center items-center fixed top-0 z-50">
-      <div className="max-w-[1366px] w-screen justify-between overflow-hidden flex items-center p-4">
+    <header className="w-screen bg-background/50 border-b border-[#F1E6FD30]/80 backdrop-blur-xs flex justify-center items-center fixed top-0 left-0 z-50">
+      <div className="max-w-[1366px] w-full justify-between overflow-hidden flex items-center p-4">
         <LogoDesktop2 className="text-foreground hidden md:inline" />
         <LogoMobile2 className="text-foreground md:hidden" />
 

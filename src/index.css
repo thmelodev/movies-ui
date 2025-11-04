@@ -22,6 +22,9 @@
   --color-border: var(--border);
   --color-ring: var(--ring);
   --color-card: var(--card);
+  --color-categories: var(--categories);
+  --color-home: var(--home);
+  --color-foreground-disabled: var(--foreground-disabled);
   --font-sans: 'Roboto', sans-serif;
   --font-montserrat: 'Montserrat', sans-serif;
 }
@@ -44,11 +47,14 @@
     --secondary-disabled: rgba(235, 234, 248, 0.08);
     --input: #f3f3f3;
     --card: #ffffff;
+    --categories: rgba(180, 180, 180, 1);
   }
 
   .dark {
     --background: #121113;
     --foreground: #EEEEF0;
+    --foreground-disabled: rgba(234, 230, 253, 0.43)
+    --home: rgba(35, 34, 37, 1);
 
     /* Primary */
     --primary: #8E4EC6;
@@ -83,12 +89,15 @@
   }
 
   button:disabled {
-    @apply bg-primary-disabled opacity-70 cursor-not-allowed ;
+    @apply bg-primary-disabled opacity-70 cursor-not-allowed;
   }
 
   .btn-secondary {
     background-color: var(--secondary);
     color: var(--secondary-foreground);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    /* compatibilidade com Safari */
   }
 
   .btn-secondary:hover:not(:disabled) {
@@ -106,6 +115,7 @@
   body {
     @apply bg-background text-foreground text-base;
     @apply font-sans;
+    overflow: hidden;
   }
 
   a {
@@ -142,4 +152,5 @@
   div {
     @apply rounded-sm;
   }
+
 }
