@@ -1,29 +1,24 @@
+
 import Background from "../../assets/bg.png";
 
 interface CineBackgroundProps {
   children?: React.ReactNode;
+  height?: number;
   clipPath?: string;
   top?: number;
-  height?: number;
   backgroundPosition?: string;
   backgroundSize?: string;
 }
 
 
-const CineBackground = ({ children, clipPath, top, height, backgroundPosition, backgroundSize }: CineBackgroundProps) => {
+const CineBackground = ({ children, height, clipPath, top, backgroundPosition, backgroundSize }: CineBackgroundProps) => {
   return (
     <div
-      className={`
-          relative 
-          w-full 
-          max-w-screen
-          flex flex-col items-center justify-center 
-          min-h-full
-          overflow-x-hidden
-      `}
+      className={`flex flex-col w-full relative`}
+      style={height ? { height: `${height}px`, overflowY: 'hidden' } : { flex: 1, height: '100%' }}
     >
       <div
-        className={`w-screen h-[860px] bg-no-repeat bg-center md:bg-cover opacity-40 absolute -top-64 md:-top-[180px]`}
+        className={`w-screen h-[860px] bg-no-repeat bg-center md:bg-cover opacity-40 absolute ${!top ? '-top-64 md:-top-[180px]' : ''}`}
         style={{
           backgroundImage: `url(${Background})`,
           clipPath: clipPath ? clipPath : undefined,
@@ -42,7 +37,7 @@ const CineBackground = ({ children, clipPath, top, height, backgroundPosition, b
         }}
       />
 
-      <div className="relative z-10 w-[1366px] overflow-x-hidden min-h-screen justify-center flex items-center">
+      <div className={`relative z-10 w-[1366px] max-w-screen flex justify-center items-center ${height ? 'overflow-y-hidden items-start h-' + height : 'items-center flex-1'}`}>
         {children}
       </div>
     </div>
