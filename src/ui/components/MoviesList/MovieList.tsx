@@ -7,8 +7,8 @@ const MovieList = () => {
   const totalPages = 10;
 
   return (
-    <div className="flex flex-col w-full h-max">
-      <div className="grid grid-cols-2 gap-4 px-4 py-4 w-full h-max auto-rows-[minmax(186px,auto)] bg-card">
+    <div className="flex flex-col w-full h-max md:p-6">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6 px-4 py-4 w-full h-max auto-rows-[minmax(186px,auto)] bg-card">
         <Movie
           title="bumblebee"
           positiveVotesPercent={67}
