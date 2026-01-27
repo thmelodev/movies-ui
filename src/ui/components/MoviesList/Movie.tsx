@@ -8,7 +8,7 @@ interface MovieProps {
   backgroundImageUrl: string
 }
 
-const Movie = ({ title, categories, backgroundImageUrl }: MovieProps) => {
+const Movie = ({ title, categories, backgroundImageUrl, positiveVotesPercent }: MovieProps) => {
   const [showDetails, setShowDetails] = useState(false);
 
   return (
@@ -34,7 +34,7 @@ const Movie = ({ title, categories, backgroundImageUrl }: MovieProps) => {
 
       {showDetails && (
         <div className="z-30 absolute top-1/2 left-1/2 -translate-y-[80%] -translate-x-1/2">
-          <CircularRating percentage={30} />
+          <CircularRating percentage={positiveVotesPercent} />
         </div>
       )}
     </div>
