@@ -4,7 +4,6 @@ import { persist } from 'zustand/middleware'
 type ThemeState = {
   theme: 'light' | 'dark'
   toggleTheme: () => void
-
 }
 
 export const useThemeStore = create(

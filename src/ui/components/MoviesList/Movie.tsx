@@ -2,19 +2,19 @@ import { useState } from "react";
 import CircularRating from "./CircularRating";
 
 interface MovieProps {
-  positiveVotesPercent: number
+  positiveRating: number
   title: string
   categories: string[]
-  backgroundImageUrl: string
+  imageUrl: string
 }
 
-const Movie = ({ title, categories, backgroundImageUrl, positiveVotesPercent }: MovieProps) => {
+const Movie = ({ title, categories, imageUrl, positiveRating }: MovieProps) => {
   const [showDetails, setShowDetails] = useState(false);
 
   return (
     <div className="min-h-72 w-full aspect-186/288 relative flex items-end rounded-md cursor-pointer transition-all duration-300 ease-in-out" onMouseEnter={() => { setShowDetails(true) }} onMouseLeave={() => { setShowDetails(false) }}>
       <img
-        src={backgroundImageUrl}
+        src={imageUrl}
         alt={title}
         className="absolute inset-0 w-full h-full object-cover z-0"
       />
@@ -34,7 +34,7 @@ const Movie = ({ title, categories, backgroundImageUrl, positiveVotesPercent }: 
 
       {showDetails && (
         <div className="z-30 absolute top-1/2 left-1/2 -translate-y-[80%] -translate-x-1/2">
-          <CircularRating percentage={positiveVotesPercent} />
+          <CircularRating percentage={positiveRating} />
         </div>
       )}
     </div>

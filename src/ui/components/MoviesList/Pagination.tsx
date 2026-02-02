@@ -9,6 +9,8 @@ interface PaginationProps {
 }
 
 const Pagination = ({ page, totalPages, onChangePage }: PaginationProps) => {
+  console.log({ page, totalPages });
+
   const [isMobile, setIsMobile] = useState(
     typeof window !== "undefined" && window.innerWidth <= 768
   );

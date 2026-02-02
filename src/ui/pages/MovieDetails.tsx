@@ -1,17 +1,28 @@
+import { useParams } from "react-router";
 import { capitalizeString } from "../../utils/capitalizeString";
 import CategoryCard from "../components/CategoryCard";
 import CineBackground from "../components/CineBackground";
 import InformationCard from "../components/InformationCard";
 import CircularRating from "../components/MoviesList/CircularRating";
 
-export interface MovieDetailsProps {
+export interface MovieProps {
   title: string;
   originalTitle: string;
   imageUrl: string;
   backgroundImageUrl: string;
 }
 
-const MovieDetails = ({ title, originalTitle, imageUrl, backgroundImageUrl }: MovieDetailsProps) => {
+const MovieDetails = () => {
+  const { title, originalTitle, imageUrl, backgroundImageUrl } = {
+    title: "Bumblebee",
+    originalTitle: "Bumblebee",
+    imageUrl: "https://image.tmdb.org/t/p/w500/ww7eC3BqSb3J0TMdWqIJq0kZ8y6.jpg",
+    backgroundImageUrl: "https://image.tmdb.org/t/p/original/nmGWzTLMXy9x7mKd8NKPLmHtWGa.jpg"
+  }
+
+  const { id } = useParams<{ id: string }>();
+  console.log("Movie ID:", id);
+  
   return (
     <div className="flex flex-col flex-1 justify-start overflow-visible max-w-full w-full max-h-full">
       <div className="sticky top-0 z-30 bg-background md:hidden">
