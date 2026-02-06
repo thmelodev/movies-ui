@@ -1,3 +1,17 @@
+export type MovieStatus = 'RELEASED' | 'UPCOMING' | 'CANCELLED';
+
+export const MovieStatus = {
+  RELEASED: 'RELEASED',
+  UPCOMING: 'UPCOMING',
+  CANCELLED: 'CANCELLED',
+} as const;
+
+export const MovieStatusPT: Record<MovieStatus, string> = {
+  [MovieStatus.RELEASED]: 'Lançado',
+  [MovieStatus.UPCOMING]: 'Em breve',
+  [MovieStatus.CANCELLED]: 'Cancelado',
+};
+
 export interface MovieHome {
   id: string;
   title: string;
@@ -13,7 +27,7 @@ export interface Movie extends MovieHome {
   popularity: number
   releaseDate: Date
   durationMinutes: number
-  status: string
+  status: MovieStatus
   language: string
   budget: number
   revenue: number

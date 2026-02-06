@@ -145,6 +145,14 @@
     @apply min-h-11 border rounded-sm p-3 border-border bg-input outline-none focus:border-primary-active transition-shadow duration-200;
   }
 
+  textarea {
+    @apply border rounded-sm p-3 border-border bg-input outline-none focus:border-primary-active transition-shadow duration-200;
+  }
+
+  select {
+    @apply min-h-11 border rounded-sm p-3 border-border bg-input outline-none focus:border-primary-active transition-shadow duration-200;
+  }
+
   a {
     @apply font-medium underline cursor-pointer;
   }
@@ -152,5 +160,18 @@
   div {
     @apply rounded-sm;
   }
+
+  /* Chrome, Edge, Safari */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
 
 }

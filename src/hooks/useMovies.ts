@@ -9,5 +9,6 @@ export const useMovies = () => {
   return useQuery({
     queryKey: ['movies', page, limit],
     queryFn: async () => movieService.getPaginated(page, limit),
+    staleTime: 1000 * 60 * 5, // 5 minutes
   })
 }

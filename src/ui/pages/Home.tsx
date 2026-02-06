@@ -2,6 +2,7 @@ import CineBackground from "../components/CineBackground";
 import MovieList from "../components/MoviesList/MovieList";
 import TextField from "../components/TextField";
 import SearchBar from "../../assets/search.svg?react";
+import { AddMovieModal } from "../components/AddMovieModal/AddMovieModal";
 
 
 const Home = () => {
@@ -20,6 +21,7 @@ const Home = () => {
         </CineBackground>
       </div>
       <MovieList />
+      <AddMovieModal />
     </div>
   )
 }
